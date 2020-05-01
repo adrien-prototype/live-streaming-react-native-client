@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Janus } from 'janus-gateway';
+console.log('janus', Janus)
 
 export default function App() {
   return (
