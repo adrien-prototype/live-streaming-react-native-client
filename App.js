@@ -37,7 +37,7 @@ class App extends React.Component {
   janusStart() {
     janus = new Janus(
       {
-        server: 'wss://192.168.65.3/janus',
+        server: 'ws://localhost:8188/janus',
         success: () => {
           console.log('success')
             // janus.attach(
