@@ -15,19 +15,27 @@ import {
 // import Janus from './node_modules/janus-gateway'
 import Janus from './janus.mobile.js'
 
+let janus
+
+Janus.init({
+  debug: "all", callback: function() {
+    if(started)
+        return
+    started = true
+}})
+
 class App extends React.Component {
   constructor(props) {
     super(props)
-    console.log('janus: ', Janus)
+    this.state = {}
   }
 
   componentDidMount(){
-    console.log('component did mount')
     this.janusStart()
   }
 
   janusStart() {
-    const janus = new Janus(
+    janus = new Janus(
       {
         server: 'wss://192.168.65.3/janus',
         success: () => {
